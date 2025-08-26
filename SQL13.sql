@@ -72,5 +72,67 @@ SELECT p1.payment_id , p1.customer_id , MONTH(payment_date) , last_day(payment_d
 WHERE p1.amount > (SELECT AVG(amount) FROM payment AS p2 WHERE p2.customer_id = p1.customer_id) AND YEAR(payment_date) > 2004;
 
 
+-- table creation --> (DDL) , DML
+use sakila;
+-- object
+create table studentAccess(
+id int,
+sname varchar(30)
+);  -- ddl
 
+insert into studentAccess values(9,'abc');  -- dml --> to change the values in a data 
+select * from studentAccess;
 
+-- problem
+insert into studentAccess values(11);
+
+-- solution
+insert into studentAccess(id) values(12);
+select * from studentAccess;
+
+insert into studentAccess(sname) values('abc');
+
+select * from studentAccess;
+
+drop table studentAccess; -- ddl
+
+-- dml ( update ) 
+
+update studentAccess set sname = 'raj'
+where id = 12;
+select * from studentAccess;
+
+-- 
+drop table studentAccess;
+
+create table studentAccess(id int , sname varchar(10));
+
+insert into studentAccess(id,sname) values(20,'aman');
+insert into studentAccess(id,sname) values(23,'naina');
+
+select * from studentaccess;
+
+Delete from studentaccess where id between 20 and 23;
+
+select *  from studentaccess;
+Delete from studentaccess where id = 20;
+
+truncate table studentaccess;
+select * from studentaccess;
+
+-- delete and truncate difference
+-- truncate ---> drops table and recreate the structure
+
+create table test18(id tinyint);
+insert into test18 values(10);
+insert into test18 values(-128);
+
+insert into test18 values(-129);
+select * from test18;
+
+create table test19(id tinyint unsigned);  -- all positive numbers (255)
+insert into test19 values(10);
+insert into test19 values(-128);
+
+-- small --> 2 byte , mediumint --> 3 byte , big int --> 8 byte
+ 
