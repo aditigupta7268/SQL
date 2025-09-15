@@ -127,11 +127,14 @@ select * from temp4;
 select * from actor;
 
 -- temporary table are for the session only.
-create view temp5 as(
+alter view temp5 as(
 select actor_id , first_name from actor);
 
-insert into temp5(actor_id , first_name)
+insert into temp5(actor_id,first_name)
 values(222,'Elive');
+
+
+
 
 create temporary table xyz as(
 select actor_id , first_name , last_name from actor where actor_id < 7);
