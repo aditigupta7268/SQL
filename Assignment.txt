@@ -1,0 +1,5 @@
+Assignment
+1. yash_user --> give only select privilege but only 1 column.
+2. give select and update privilege to the user.
+3. make group (role) sales in the role add 2 users yash , Aditya
+give the select and insert privilege to the role and assign this particular role to your table.
